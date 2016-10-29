@@ -8,7 +8,7 @@ COPY . /home/docker/code/
 
 WORKDIR /home/docker/code/
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput
 
 # I use gunicorn here, because it just works as opposed to uwsgi, which seems to
 # fail starting even with the simplest of setups
