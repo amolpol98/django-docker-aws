@@ -4,6 +4,8 @@ web:
   expose:
     - "8000"
   volumes:
+    - /usr/src/app
+    - /usr/src/app/static
     - /home/docker/code/
 nginx:
   dockerfile: nginx.Dockerfile
@@ -12,5 +14,7 @@ nginx:
     - "80:80"
   links:
     - web:web
+  volumes:
+    - /www/static
   volumes_from:
     - web

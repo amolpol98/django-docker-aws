@@ -13,4 +13,5 @@ RUN pip install -r requirements.txt
 # I use gunicorn here, because it just works as opposed to uwsgi, which seems to
 # fail starting even with the simplest of setups
 CMD /usr/local/bin/gunicorn myproject.wsgi:application -w 2 -b :8000
+#CMD ping google.com
 #CMD ["uwsgi", "--ini", "/home/docker/code/uwsgi.ini"]
