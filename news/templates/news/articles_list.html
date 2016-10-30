@@ -1,0 +1,33 @@
+{% extends 'news/base.html' %}
+
+{% block content %}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h1>Django News</h1>
+    <p>Have a look around to see some of the latest and greatest news articles from your favorite feeds.</p>
+  </div>
+</div>
+
+<div class="container">
+  {% for row in rows %}
+  <div class="col-md-6">
+    {% for entry in row %}
+    <a href="{{entry.url}}" target="_blank" style="line-height: 1.25;font-weight: bold;font-size: 32px;color: #333;letter-spacing: -0.5px;display: block;">{{entry.title}}</a>
+    <div style="max-height: 100px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;">
+	<p>{{entry.description | safe}}</p>
+    </div>
+    <div style="margin-top:.5em;display: inline-block;padding: 0 .5em;color: #666;font-size: .9em;line-height: 2;border: 1px solid #ddd;border-radius: .25em;">
+	Read More
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+
+  <footer>
+    <p>&copy; 2015 Django News Aggregator</p>
+  </footer>
+</div> <!-- /container -->
+
+{% endblock %}
