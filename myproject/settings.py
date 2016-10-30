@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'mptt',
     'tagging',
     'zinnia_bootstrap',
+    #'zinnia_foundation',
     'zinnia',
     'news'
 ]
